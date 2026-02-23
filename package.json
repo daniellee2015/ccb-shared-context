@@ -1,0 +1,45 @@
+{
+  "name": "ccb-shared-context",
+  "version": "0.1.0",
+  "description": "Shared context manager for CCB - Cross-instance context sharing with permissions",
+  "main": "lib/index.js",
+  "bin": {
+    "ccb-context": "./bin/ccb-context.js",
+    "ccb-ctx": "./bin/ccb-context.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ccb",
+    "claude",
+    "context",
+    "shared-context",
+    "history",
+    "cross-instance",
+    "collaboration",
+    "cli"
+  ],
+  "author": "dalio willd",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daniellee2015/ccb-shared-context.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "peerDependencies": {
+    "ccb-multi": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0"
+  }
+}
