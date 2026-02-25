@@ -27,7 +27,7 @@ program
       console.log(chalk.green('✓'), 'Context shared:', result.id);
       console.log(chalk.gray('  Permission:'), result.permission);
       console.log(chalk.gray('  Timestamp:'), new Date(result.timestamp).toLocaleString());
-    } catch (error: any) {
+    } catch (error) {
       console.error(chalk.red('✗'), 'Failed to share context:', error.message);
       process.exit(1);
     }
@@ -63,7 +63,7 @@ program
         }
         console.log('');
       });
-    } catch (error: any) {
+    } catch (error) {
       console.error(chalk.red('✗'), 'Failed to query contexts:', error.message);
       process.exit(1);
     }
@@ -76,7 +76,7 @@ program
     try {
       await manager.transfer(contextId, targetInstance);
       console.log(chalk.green('✓'), 'Context transferred to:', targetInstance);
-    } catch (error: any) {
+    } catch (error) {
       console.error(chalk.red('✗'), 'Failed to transfer context:', error.message);
       process.exit(1);
     }
@@ -102,7 +102,7 @@ program
         await manager.denyInstance(contextId, options.deny);
         console.log(chalk.green('✓'), 'Instance denied:', options.deny);
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error(chalk.red('✗'), 'Failed to update permissions:', error.message);
       process.exit(1);
     }
@@ -126,7 +126,7 @@ program
         console.log(chalk.gray('  Accessed:'), ctx.accessCount || 0, 'times');
         console.log('');
       });
-    } catch (error: any) {
+    } catch (error) {
       console.error(chalk.red('✗'), 'Failed to list contexts:', error.message);
       process.exit(1);
     }
@@ -140,7 +140,7 @@ program
     try {
       const removed = await manager.cleanup(parseInt(options.days));
       console.log(chalk.green('✓'), `Removed ${removed} old contexts`);
-    } catch (error: any) {
+    } catch (error) {
       console.error(chalk.red('✗'), 'Failed to cleanup:', error.message);
       process.exit(1);
     }
