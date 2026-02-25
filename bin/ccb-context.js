@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import { SharedContextManager } from '../src/context-manager';
+import { SharedContextManager } from '../lib/context-manager.js';
 import chalk from 'chalk';
 
 const program = new Command();
